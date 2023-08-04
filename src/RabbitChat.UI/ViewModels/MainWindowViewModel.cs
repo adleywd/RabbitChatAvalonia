@@ -35,7 +35,7 @@ public partial class MainWindowViewModel : ViewModelBase
         var body = e.Body.ToArray();
         var message = Encoding.UTF8.GetString(body);
         MessagesReceived.Add(message);
-        Console.WriteLine(" [x] Received {0}", message);
+        Console.WriteLine("Received {0}", message);
     }
 
     [RelayCommand]

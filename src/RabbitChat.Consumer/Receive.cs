@@ -7,13 +7,13 @@ namespace RabbitChat.Consumer;
 
 public class Receive
 {
-    public EventHandler<BasicDeliverEventArgs> OnReceived { get; set; }
+    public EventHandler<BasicDeliverEventArgs> OnReceived { get; set; } = default!;
 
     private readonly RabbitFactory _rabbitFactory;
     
     public Receive()
     {
-        _rabbitFactory ??= new RabbitFactory(
+        _rabbitFactory ??= RabbitFactory.GetInstance(
             AccessConstants.HostName, 
             AccessConstants.Port, 
             AccessConstants.UserName,
@@ -27,7 +27,7 @@ public class Receive
         
         _rabbitFactory.Channel
             .QueueDeclare(
-                queue: "hello",
+                queue: _rabbitFactory.QueueName,
                 durable: false,
                 exclusive: false,
                 autoDelete: false,
@@ -38,7 +38,7 @@ public class Receive
         
         _rabbitFactory.Channel
             .BasicConsume(
-                queue: "hello",
+                queue: _rabbitFactory.QueueName,
                 autoAck: true,
                 consumer: consumer);
         

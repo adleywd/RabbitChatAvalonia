@@ -7,21 +7,27 @@ namespace RabbitChat.Producer;
 public class Send
 {
     private readonly RabbitFactory _rabbitFactory;
+
     public Send()
     {
-        _rabbitFactory = new RabbitFactory(AccessConstants.HostName, AccessConstants.Port, AccessConstants.UserName, AccessConstants.Password);
+        _rabbitFactory ??= RabbitFactory.GetInstance(
+            AccessConstants.HostName, 
+            AccessConstants.Port, 
+            AccessConstants.UserName,
+            AccessConstants.Password);
     }
-    
+
     public void SendMessage(string message)
     {
-        _rabbitFactory.Channel.QueueDeclare(queue: "hello",
+        ArgumentNullException.ThrowIfNull(_rabbitFactory);
+        ArgumentNullException.ThrowIfNull(_rabbitFactory.Channel);
+        
+        _rabbitFactory.Channel.QueueDeclare(queue: _rabbitFactory.QueueName,
             durable: false,
             exclusive: false,
             autoDelete: false,
             arguments: null);
 
-        Console.WriteLine(" Press [enter] to exit or send type anything to send as a message.");
-        
         if (string.IsNullOrEmpty(message))
         {
             return;
@@ -30,10 +36,10 @@ public class Send
         var body = Encoding.UTF8.GetBytes(message);
         
         _rabbitFactory.Channel.BasicPublish(exchange: "",
-            routingKey: "hello",
+            routingKey: _rabbitFactory.RoutingKey,
             basicProperties: null,
             body: body);
         
-        Console.WriteLine(" [x] Sent {0}", message);
+        Console.WriteLine("Sent {0}", message);
     }
 }
