@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitChat.UI", "src\RabbitChat.UI\RabbitChat.UI.csproj", "{804090D1-3707-4291-A5ED-D70E462811E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EDEEBDDE-F387-409B-ACBD-30518AEB2ED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitChat.Core", "src\RabbitChat.Core\RabbitChat.Core.csproj", "{3AF655A7-6A85-4714-A41F-60968A5B94BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitChat.Consumer", "src\RabbitChat.Consumer\RabbitChat.Consumer.csproj", "{6A2A80C8-3039-471E-95C7-02FE88B609F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitChat.Producer", "src\RabbitChat.Producer\RabbitChat.Producer.csproj", "{84D46D7F-7810-4317-8B42-06212C7D4686}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BBC03171-085F-4E72-80F3-ACC31C5336D2}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{804090D1-3707-4291-A5ED-D70E462811E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804090D1-3707-4291-A5ED-D70E462811E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804090D1-3707-4291-A5ED-D70E462811E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804090D1-3707-4291-A5ED-D70E462811E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AF655A7-6A85-4714-A41F-60968A5B94BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AF655A7-6A85-4714-A41F-60968A5B94BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AF655A7-6A85-4714-A41F-60968A5B94BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AF655A7-6A85-4714-A41F-60968A5B94BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A2A80C8-3039-471E-95C7-02FE88B609F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A2A80C8-3039-471E-95C7-02FE88B609F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A2A80C8-3039-471E-95C7-02FE88B609F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A2A80C8-3039-471E-95C7-02FE88B609F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84D46D7F-7810-4317-8B42-06212C7D4686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84D46D7F-7810-4317-8B42-06212C7D4686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84D46D7F-7810-4317-8B42-06212C7D4686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84D46D7F-7810-4317-8B42-06212C7D4686}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{804090D1-3707-4291-A5ED-D70E462811E0} = {EDEEBDDE-F387-409B-ACBD-30518AEB2ED2}
+		{3AF655A7-6A85-4714-A41F-60968A5B94BF} = {EDEEBDDE-F387-409B-ACBD-30518AEB2ED2}
+		{6A2A80C8-3039-471E-95C7-02FE88B609F7} = {EDEEBDDE-F387-409B-ACBD-30518AEB2ED2}
+		{84D46D7F-7810-4317-8B42-06212C7D4686} = {EDEEBDDE-F387-409B-ACBD-30518AEB2ED2}
+	EndGlobalSection
+EndGlobal
