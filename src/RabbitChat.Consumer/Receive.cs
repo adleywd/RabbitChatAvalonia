@@ -14,10 +14,10 @@ public class Receive
     public Receive()
     {
         _rabbitFactory ??= RabbitFactory.GetInstance(
-            AccessConstants.HostName, 
-            AccessConstants.Port, 
-            AccessConstants.UserName,
-            AccessConstants.Password);
+            RabbitConstants.HostName, 
+            RabbitConstants.Port, 
+            RabbitConstants.UserName,
+            RabbitConstants.Password);
     }
 
     public void ReceiveMessage()

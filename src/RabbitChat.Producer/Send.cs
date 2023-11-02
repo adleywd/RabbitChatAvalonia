@@ -11,10 +11,10 @@ public class Send
     public Send()
     {
         _rabbitFactory ??= RabbitFactory.GetInstance(
-            AccessConstants.HostName, 
-            AccessConstants.Port, 
-            AccessConstants.UserName,
-            AccessConstants.Password);
+            RabbitConstants.HostName, 
+            RabbitConstants.Port, 
+            RabbitConstants.UserName,
+            RabbitConstants.Password);
     }
 
     public void SendMessage(string message)
@@ -33,9 +33,12 @@ public class Send
             return;
         }
         
+        _rabbitFactory.Channel.ExchangeDeclare(RabbitConstants.TestExchangeName, ExchangeType.Direct, true);
+        _rabbitFactory.Channel.QueueBind(_rabbitFactory.QueueName, RabbitConstants.TestExchangeName, _rabbitFactory.RoutingKey);
+        
         var body = Encoding.UTF8.GetBytes(message);
         
-        _rabbitFactory.Channel.BasicPublish(exchange: "",
+        _rabbitFactory.Channel.BasicPublish(exchange: RabbitConstants.TestExchangeName,
             routingKey: _rabbitFactory.RoutingKey,
             basicProperties: null,
             body: body);
